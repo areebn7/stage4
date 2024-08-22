@@ -13,18 +13,25 @@ import com.example.stage4.Model.Account;
 import com.example.stage4.Security.TokenService;
 
 @RestController
+@RequestMapping("/account")
 public class AuthController {
 
       @Autowired
     TokenService tokenService;
+
+    @GetMapping
+    public String health() {
+        return "Authorization Server is running.";
+    }
+
+    @GetMapping("/register")
+    public String register() {
+        return "Success.";
+    }
 
     @PostMapping("/token")
     public String token(Authentication authentication) {
         return tokenService.generateToken(authentication);
     }
 
-    @GetMapping("/")
-    public String health() {
-        return "Authorization Server is running.";
-    }
 }
