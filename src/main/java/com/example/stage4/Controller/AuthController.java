@@ -13,7 +13,7 @@ import com.example.stage4.Model.Account;
 import com.example.stage4.Security.TokenService;
 
 @RestController
-public class AccountController {
+public class AuthController {
 
       @Autowired
     TokenService tokenService;
